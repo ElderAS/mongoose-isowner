@@ -5,8 +5,6 @@ module.exports = function mongooseIsOwner(schema, options = {}) {
   schema.statics.isOwner = isOwner
 
   function isOwner(doc, user) {
-    if (!doc || !user) return false
-
     return Promise.resolve(resolver(doc, user))
   }
 }
